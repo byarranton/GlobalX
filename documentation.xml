@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>name-sorter_d</name>
+    </assembly>
+    <members>
+        <member name="T:GlobalX.NameSorter">
+            <summary>
+            Class to Read names from a .txt file and perform sorting and writing operations
+            </summary>
+        </member>
+        <member name="M:GlobalX.NameSorter.Main(System.String[])">
+            <summary>
+            Reads the names from the file given in args. Sorts the names by surname then given names; saves the sorted list to another file; and prints sorted list to console.
+            </summary>
+            <remarks>
+            Usage:  name-sorter [input_file_path]
+            </remarks>
+            <param name="args">The filepath to the file containing the names. The file is a .txt file. Each line in the file has the form "given_names surname", and can have up to 3 given names.
+            </param>
+        </member>
+        <member name="M:GlobalX.NameSorter.#ctor(System.IO.TextReader)">
+            <summary>
+            Class constructor. Reads the names from file and puts them into givennames_surnames
+            </summary>
+            <param name="textReader">TextReader pointing to the file containing the unsorted names
+            </param>
+            <exception cref="T:System.IO.InvalidDataException">If fileName contains invalid formatting</exception>
+        </member>
+        <member name="M:GlobalX.NameSorter.GivenNamesFirst">
+            <summary>
+            Returns the list of names, where each element of the list has form "given_names surname". List has whatever order the current instance has. 
+            </summary>
+            <returns>
+            list of name strings where each element has form "given_names surnames"
+            </returns>
+        </member>
+        <member name="M:GlobalX.NameSorter.SortBySurname">
+            <summary>
+            Sorts the list of names, first by surname, then by any given names the person may have.
+            </summary>
+        </member>
+        <member name="M:GlobalX.NameSorter.SortByGivenNames">
+            <summary>
+            Sorts the list of names, first by given names, then by surname.
+            </summary>
+        </member>
+        <member name="M:GlobalX.NameSorter.WriteToFile(System.String)">
+            <summary>
+            Writes the names list to file (in whatever the current order of the instance is).
+            </summary>
+            <param name="filepath">
+             string giving the filepath of the .txt file to write to.
+            </param>
+        </member>
+    </members>
+</doc>
